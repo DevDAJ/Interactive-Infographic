@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Theory - Interactive Infographic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="src/css/styles.css">
+</head>
+
+<body>
+  <div id="progress-bar" aria-hidden="true"></div>
+  <section id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="art-block art-bar-tl"></div>
+      <div class="art-block art-bar-br"></div>
+      <div class="art-block art-circle"></div>
+      <div class="art-block art-tri"></div>
+      <div class="art-block art-stripe"></div>
+    </div>
+    <div class="hero-noise" aria-hidden="true"></div>
+    <div class="hero-overlay">
+      <h1>Color Theory</h1>
+      <p>The science &amp; art of color</p>
+    </div>
+    <div class="scroll-indicator">
+      scroll
+      <span></span>
+    </div>
+  </section>
+  <section id="wheel" style="background:var(--bg2)">
+    <div class="section-inner">
+      <div class="section-label">Visualization</div>
+      <h2 class="section-title">The Color Wheel</h2>
+      <p class="section-sub">Sir Isaac Newton's 1666 color wheel maps the visible spectrum into a circle, revealing the
+        relationships between hues.</p>
+      <div
+        style="display:flex;justify-content:center;align-items:center;gap:clamp(1rem,3vw,3rem);flex-wrap:wrap;margin-bottom:40px">
+        <color-wheel size="360" id="mainWheel"></color-wheel>
+      </div>
+      <div class="wheel-accent" aria-hidden="true"></div>
+      <div class="grid-3">
+        <div class="wheel-fact"
+          style="padding:24px;background:var(--card);border-radius:var(--radius);text-align:center">
+          <div class="fact-icon">🎯</div>
+          <h4 style="margin-bottom:.5rem">Hue</h4>
+          <p style="color:var(--text2);font-size:.9rem">The pure spectrum color (what we name - red, blue, etc.).
+            Position on the wheel from 0° to 360°.</p>
+        </div>
+        <div class="wheel-fact"
+          style="padding:24px;background:var(--card);border-radius:var(--radius);text-align:center">
+          <div class="fact-icon">🎚️</div>
+          <h4 style="margin-bottom:.5rem">Saturation</h4>
+          <p style="color:var(--text2);font-size:.9rem">The intensity or purity of a color. High saturation = vivid; low
+            saturation = muted/grayish.</p>
+        </div>
+        <div class="wheel-fact"
+          style="padding:24px;background:var(--card);border-radius:var(--radius);text-align:center">
+          <div class="fact-icon">💡</div>
+          <h4 style="margin-bottom:.5rem">Brightness</h4>
+          <p style="color:var(--text2);font-size:.9rem">How light or dark a color is. Adding white = tint, adding black
+            = shade, adding gray = tone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="mixer" style="background:linear-gradient(180deg,var(--bg3) 0%,var(--bg) 65%)">
+    <div class="section-inner">
+      <div class="section-label">Experiment</div>
+      <h2 class="section-title">Color Mixer</h2>
+      <p class="section-sub">Pick <strong>two</strong> colors in A and B, save the blend to your palette, and keep
+        mixing.</p>
+      <color-mixer></color-mixer>
+    </div>
+  </section>
+  <section id="harmony" style="background:var(--bg2);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)">
+    <div class="section-inner">
+      <div class="section-label">Relationships</div>
+      <h2 class="section-title">Color Harmony</h2>
+      <p class="section-sub">Pleasing arrangements of color based on geometric relationships on the color wheel. Used by
+        artists and designers for centuries.</p>
+      <div style="display:flex;justify-content:center;margin:28px 0 36px">
+        <harmony-wheel size="340" start-segment="0"></harmony-wheel>
+      </div>
+
+    </div>
+  </section>
+  <section id="warmcool" style="background:var(--bg2)">
+    <div class="section-inner">
+      <div class="section-label">Temperature</div>
+      <h2 class="section-title">Warm &amp; Cool Colors</h2>
+      <p class="section-sub">Colors evoke temperature. Warm colors advance and energize; cool colors recede and calm.
+        Master this to create depth and mood.</p>
+      <div class="grid-2">
+        <div class="warm-panel"
+          style="padding:40px;background:linear-gradient(135deg,#FF4500,#FFD700);border-radius:var(--radius);text-align:center">
+          <h3 style="font-size:1.8rem;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.3)">🔥 Warm</h3>
+          <p style="color:rgba(255,255,255,.85);margin-top:8px">Red, Orange, Yellow, Gold</p>
+          <p style="color:rgba(255,255,255,.7);font-size:.9rem;margin-top:16px">Energizing · Stimulating ·
+            Approachable<br>Advance in space · Command attention</p>
+          <div style="margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+            <span
+              style="padding:6px 16px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:.85rem">Passion</span>
+            <span
+              style="padding:6px 16px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:.85rem">Energy</span>
+            <span
+              style="padding:6px 16px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:.85rem">Optimism</span>
+          </div>
+        </div>
+        <div class="cool-panel"
+          style="padding:40px;background:linear-gradient(135deg,#0051A5,#00CED1);border-radius:var(--radius);text-align:center">
+          <h3 style="font-size:1.8rem;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.3)">❄️ Cool</h3>
+          <p style="color:rgba(255,255,255,.85);margin-top:8px">Blue, Green, Purple, Teal</p>
+          <p style="color:rgba(255,255,255,.7);font-size:.9rem;margin-top:16px">Calming · Professional ·
+            Distant<br>Recede in space · Create depth</p>
+          <div style="margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+            <span
+              style="padding:6px 16px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:.85rem">Trust</span>
+            <span
+              style="padding:6px 16px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:.85rem">Serenity</span>
+            <span
+              style="padding:6px 16px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:.85rem">Logic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="psychology">
+    <div class="section-inner">
+          <div class="psych-stage">
+        <div class="psych-sticky">
+          <div class="psych-scrub" id="psychScrub" aria-hidden="true">
+            <div class="scrub-track"></div>
+            <div class="scrub-fill" id="scrubFill"></div>
+          </div>
+          <div class="section-label">Meaning</div>
+          <h2 class="section-title">Color Psychology</h2>
+          <p class="section-sub">Colors influence perception, emotion, and behavior. Understanding this is essential for
+            effective design and communication.</p>
+          <div id="psych-panel" style="--psych-color:#EF2B2B">
+            <div id="psych-emoji"><svg viewBox="0 0 24 24" width="56" height="56">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg></div>
+            <h3 id="psych-name">Red</h3>
+            <p id="psych-desc">Passion, urgency, excitement, appetite</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BOUNCE LIGHT ========== -->
+  <section id="bounce" style="background:var(--bg)">
+    <div class="section-inner">
+      <div class="section-label">Bounce Light</div>
+      <h2 class="section-title">How Color Reflects</h2>
+      <p class="section-sub">Light bounces off every surface and carries its color. See how a colored platform and sky
+        affect the ball's shadows and reflections.</p>
+      <div class="bounce-wrap">
+        <div class="bounce-scene" id="bounceScene" aria-hidden="true"></div>
+        <div class="bounce-controls">
+          <div class="ctrl-row">
+            <div class="ctrl-group">
+              <label for="bounceBall">Ball</label>
+              <input type="color" id="bounceBall" value="#f0f0f0">
+            </div>
+            <div class="ctrl-group">
+              <label for="bounceLight">Light</label>
+              <input type="color" id="bounceLight" value="#ffe8cc">
+            </div>
+          </div>
+          <div class="ctrl-row">
+            <div class="ctrl-group">
+              <label for="bounceSky">Sky</label>
+              <input type="color" id="bounceSky" value="#7777cc">
+            </div>
+            <div class="ctrl-group">
+              <label for="bouncePlatform">Platform</label>
+              <input type="color" id="bouncePlatform" value="#cc5555">
+            </div>
+          </div>
+          <div class="ctrl-row">
+            <div class="ctrl-group">
+              <label for="bounceRim">Rim</label>
+              <input type="color" id="bounceRim" value="#ffeecc">
+            </div>
+          </div>
+          <div class="ctrl-presets">
+            <button type="button" class="preset-btn" data-preset="sunset">Sunset</button>
+            <button type="button" class="preset-btn" data-preset="studio">Studio</button>
+            <button type="button" class="preset-btn" data-preset="forest">Forest</button>
+            <button type="button" class="preset-btn" data-preset="ocean">Ocean</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Additive vs Subtractive ========== -->
+  <section id="models" style="background:var(--bg2)">
+    <div class="section-inner">
+      <div class="section-label">Models</div>
+      <h2 class="section-title">Additive vs. Subtractive</h2>
+      <p class="section-sub">Two fundamental color models: additive (light) and subtractive (pigment). Each has its own
+        set of primaries and mixing behaviors.</p>
+      <div class="grid-2">
+        <div
+          style="padding:30px;background:var(--card);border-radius:var(--radius);display:flex;flex-direction:column;gap:12px">
+          <h4 style="margin:0">💡 Additive</h4>
+          <p style="color:var(--text2);font-size:.85rem;margin:0">Mixing <strong>light</strong>. Adding all primaries
+            creates white. Black is the absence of light.</p>
+          <palette-row colors="#FF0000,#00FF00,#0000FF" style="--h:20px"></palette-row>
+          <p style="color:var(--text2);font-size:.78rem;margin:0">Primaries: Red · Green · Blue</p>
+          <palette-row colors="#FF0000,#FFFF00,#00FF00,#00FFFF,#0000FF,#FF00FF" style="--h:20px"></palette-row>
+          <p style="color:var(--text2);font-size:.78rem;margin:0">Secondaries: Yellow · Cyan · Magenta</p>
+          <palette-row colors="#000000,#444444,#888888,#BBBBBB,#FFFFFF" style="--h:20px"></palette-row>
+          <p style="color:var(--text2);font-size:.78rem;margin:0">All combined: Black → White</p>
+        </div>
+        <div
+          style="padding:30px;background:var(--card);border-radius:var(--radius);display:flex;flex-direction:column;gap:12px">
+          <h4 style="margin:0">🎨 Subtractive</h4>
+          <p style="color:var(--text2);font-size:.85rem;margin:0">Mixing <strong>pigments</strong>. Adding all primaries
+            creates dark brown. White is the paper.</p>
+          <palette-row colors="#00DDFF,#FF00FF,#FFFF00" style="--h:20px"></palette-row>
+          <p style="color:var(--text2);font-size:.78rem;margin:0">Primaries: Cyan · Magenta · Yellow</p>
+          <palette-row colors="#00DDFF,#0044FF,#FF00FF,#FF0000,#FFFF00,#00DD00" style="--h:20px"></palette-row>
+          <p style="color:var(--text2);font-size:.78rem;margin:0">Secondaries: Blue · Red · Green</p>
+          <palette-row colors="#FFFFFF,#CCCCBB,#998877,#554433,#1A1108" style="--h:20px"></palette-row>
+          <p style="color:var(--text2);font-size:.78rem;margin:0">All combined: White → Dark Brown</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Color Theory · Interactive Infographic</p>
+    <a href="https://devdaj.tech" target="_blank" style="margin-top:4px">DevDaj</a>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+
+</body>
+
+</html>
