@@ -1,28 +1,28 @@
 class ColorSwatch extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
+	constructor() {
+		super();
+		this.attachShadow({ mode: "open" });
+	}
 
-  static get observedAttributes(): string[] {
-    return ['color', 'name', 'hex'];
-  }
+	static get observedAttributes(): string[] {
+		return ["color", "name", "hex"];
+	}
 
-  connectedCallback(): void {
-    this.render();
-  }
+	connectedCallback(): void {
+		this.render();
+	}
 
-  attributeChangedCallback(): void {
-    this.render();
-  }
+	attributeChangedCallback(): void {
+		this.render();
+	}
 
-  render(): void {
-    const root = this.shadowRoot;
-    if (!root) return;
-    const c = this.getAttribute('color') ?? '#ff0000';
-    const n = this.getAttribute('name') ?? '';
-    const h = this.getAttribute('hex') ?? c;
-    root.innerHTML = `
+	render(): void {
+		const root = this.shadowRoot;
+		if (!root) return;
+		const c = this.getAttribute("color") ?? "#ff0000";
+		const n = this.getAttribute("name") ?? "";
+		const h = this.getAttribute("hex") ?? c;
+		root.innerHTML = `
       <style>
         :host{display:block}
         .swatch{
@@ -47,7 +47,7 @@ class ColorSwatch extends HTMLElement {
         <div class="hex">${h}</div>
       </div>
     `;
-  }
+	}
 }
 
-customElements.define('color-swatch', ColorSwatch);
+customElements.define("color-swatch", ColorSwatch);
